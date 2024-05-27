@@ -1,0 +1,43 @@
+{# se agrega load static para que lea los archivos estaticos #}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Project</title>
+    <link rel="stylesheet" href="{% static 'style/main.css' %}">
+</head>
+<body>
+    
+    {# creando la vista que va a heredar los templates #}
+
+<nav class="navbar">
+    <ul>
+        <li>
+            <a href="{% url 'index' %}" >home</a>
+        </li>   
+        <li>
+            <a href="{% url 'project' %}">projects</a>
+        </li>
+        <li>
+            <a href="{% url 'tasks' %}">tasks</a>
+        </li>
+        <li>
+            <a href="{% url 'create_tasks' %}">Create tasks</a>
+        </li>
+        <li>
+            <a href="{% url 'create_project' %}">Create project</a>
+        </li>
+    </ul>
+</nav>
+
+<main class="container">
+    
+    {% block content %}
+    {% endblock %}
+
+</main>
+</body>
+</html>

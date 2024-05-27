@@ -1,0 +1,18 @@
+{% extends 'layouts/base.html' %}
+    
+{% load static %}
+
+{% block content %}
+
+<h2 class="card">Create a new Task</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button>
+        Save
+    </button>
+</form>
+
+<div class="card"> jjaja</div>
+{% endblock %}
